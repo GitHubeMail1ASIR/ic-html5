@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: pip
-      run: sudo  pip install html5validator
+      run: sudo pip install html5validator
     - name: Test html5
       run: html5validator --root _build/
     - name: Install node
@@ -15,5 +15,5 @@ jobs:
         node-version: 8
     - name: Install surge
       run: npm install -g surge
-    - name: Deploy to josedom24@surge.sh
-      run: surge ./_build/ josedom24.surge.sh --token ${{ secrets.SURGE_TOKEN }}   
+    - name: Deploy to githubemail1asir@surge.sh
+      run: surge ./_build/ githubemail1asir.surge.sh --token ${{ secrets.SURGE_TOKEN }}
