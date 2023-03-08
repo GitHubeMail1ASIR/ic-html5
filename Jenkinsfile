@@ -1,7 +1,7 @@
 pipeline {
     environment {
         TOKEN = credentials('SURGE_TOKEN')
-      }
+    }
     agent {
         docker { image 'josedom24/debian-npm'
         args '-u root:root'
@@ -10,10 +10,9 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git branch:'master',url:'https://github.com/josedom24/ic-travis-html5.git'
+                git branch:'master',url:'https://github.com/githubemail1asir/ic-html5.git'
             }
         }
-        
         stage('Install surge')
         {
             steps {
@@ -23,9 +22,8 @@ pipeline {
         stage('Deploy')
         {
             steps{
-                sh 'surge ./_build/ josedom24.surge.sh --token $TOKEN'
+                sh 'surge ./_build/ githubemail1asir.surge.sh --token $TOKEN'
             }
         }
-        
     }
 }
